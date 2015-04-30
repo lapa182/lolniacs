@@ -7,6 +7,11 @@ angular.module('lolniacsApp')
       'link': '/'
     }];
 
+    $scope.menu = [{
+      'title': 'Analytics',
+      'link': '/analytics'
+    }];
+
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;

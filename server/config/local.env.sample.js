@@ -18,6 +18,8 @@ module.exports = {
   GOOGLE_ID:        'app-id',
   GOOGLE_SECRET:    'secret',
 
+  RIOT_KEY:         '14e1bd66-44d7-4562-bc2e-dc8a06503731',
+
   // Control debug level for modules using visionmedia/debug
   DEBUG: ''
 };

@@ -9,14 +9,16 @@
 
 'use strict';
 
+var request = require('request');
 var _ = require('lodash');
 var Thing = require('./thing.model');
 
 // Get list of things
 exports.index = function(req, res) {
-  Thing.find(function (err, things) {
-    if(err) { return handleError(res, err); }
-    return res.json(200, things);
+  request('https://euw.api.pvp.net/api/lol/euw/v1.2/champion?freeToPlay=true&api_key=14e1bd66-44d7-4562-bc2e-dc8a06503731', function(err, response, json){
+    if (!err && response.statusCode == 200) {
+      return res.json(200, JSON.parse(json));
+    }
   });
 };
 
