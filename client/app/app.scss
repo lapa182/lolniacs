@@ -21,8 +21,17 @@ $font-family-base: "Lato", Helvetica, Arial, sans-serif !default;
 
 // Component styles are injected through grunt
 // injector
-@import 'styles/admin.scss';
-@import 'styles/login.scss';
-@import 'styles/main.scss';
+@import 'styles/modules/_colors.scss';
+@import 'styles/modules/_mixins.scss';
+@import 'styles/modules/_typography.scss';
+@import 'styles/modules/_utility.scss';
+@import 'styles/modules/_variables.scss';
+@import 'styles/partials/_admin.scss';
+@import 'styles/partials/_base.scss';
+@import 'styles/partials/_buttons.scss';
+@import 'styles/partials/_figures.scss';
+@import 'styles/partials/_grids.scss';
+@import 'styles/partials/_login.scss';
+@import 'styles/partials/_main.scss';
 @import 'modal/modal.scss';
 // endinjector
