@@ -1,5 +1,8 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 $fa-font-path: "/bower_components/font-awesome/fonts";
+// Definindo variável para sobrepor a font-family do bootstrap.
+$font-family-sans-serif: "Lato", Helvetica, Arial, sans-serif !default;
+$font-family-base: "Lato", Helvetica, Arial, sans-serif !default;
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 @import 'font-awesome/scss/font-awesome';
@@ -7,6 +10,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 /**
  * App-wide Styles
  */
+
 
 .browsehappy {
     margin: 0.2em 0;

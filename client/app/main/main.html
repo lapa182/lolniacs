@@ -1,15 +1,14 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
-  </div>
-</header>
-
 <div class="container">
-  <h1>HELLO!!!!</h1>
+  <form action="#" ng-controller="formCtrl">
+    <div class="form-group has-feedback">
+      <input type="text" class="lol-input" placeholder="Search for your summoner name" ng-keyup="keyPress($event)" ng-blur="onBlur($event)">
+      <a href="#" class="form-control-feedback" ng-click="callSummoner($event)">
+        <span class="glyphicon glyphicon-search"></span>
+      </a>
+    </div>
+  </form>
 </div>
 
 <footer class="footer">

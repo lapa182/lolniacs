@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('lolniacsApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+angular.module('lolniacsApp').controller('MainCtrl', function ($scope, $http, socket) {
+    var bgSize = 160;
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
@@ -23,4 +23,4 @@ angular.module('lolniacsApp')
     // $scope.$on('$destroy', function () {
     //   socket.unsyncUpdates('thing');
     // });
-  });
+});

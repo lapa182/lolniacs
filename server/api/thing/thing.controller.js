@@ -11,10 +11,13 @@
 
 var request = require('request');
 var _ = require('lodash');
-var Thing = require('./thing.model');
+var Champions = require('./thing.model');
 
 // Get list of things
 exports.index = function(req, res) {
+  Champions.find('champions', function(err, champs) {
+    
+  });
   request('https://euw.api.pvp.net/api/lol/euw/v1.2/champion?freeToPlay=true&api_key=14e1bd66-44d7-4562-bc2e-dc8a06503731', function(err, response, json){
     if (!err && response.statusCode == 200) {
       return res.json(200, JSON.parse(json));
@@ -24,7 +27,7 @@ exports.index = function(req, res) {
 
 // Get a single thing
 exports.show = function(req, res) {
-  Thing.findById(req.params.id, function (err, thing) {
+  Champions.findById(req.params.id, function (err, thing) {
     if(err) { return handleError(res, err); }
     if(!thing) { return res.send(404); }
     return res.json(thing);
@@ -33,7 +36,7 @@ exports.show = function(req, res) {
 
 // Creates a new thing in the DB.
 exports.create = function(req, res) {
-  Thing.create(req.body, function(err, thing) {
+  Champions.create(req.body, function(err, thing) {
     if(err) { return handleError(res, err); }
     return res.json(201, thing);
   });
@@ -42,7 +45,7 @@ exports.create = function(req, res) {
 // Updates an existing thing in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
-  Thing.findById(req.params.id, function (err, thing) {
+  Champions.findById(req.params.id, function (err, thing) {
     if (err) { return handleError(res, err); }
     if(!thing) { return res.send(404); }
     var updated = _.merge(thing, req.body);
@@ -55,7 +58,7 @@ exports.update = function(req, res) {
 
 // Deletes a thing from the DB.
 exports.destroy = function(req, res) {
-  Thing.findById(req.params.id, function (err, thing) {
+  Champions.findById(req.params.id, function (err, thing) {
     if(err) { return handleError(res, err); }
     if(!thing) { return res.send(404); }
     thing.remove(function(err) {
